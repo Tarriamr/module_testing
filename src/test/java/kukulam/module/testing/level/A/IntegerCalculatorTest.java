@@ -48,6 +48,7 @@ public class IntegerCalculatorTest {
         // given
         int a = 10;
         int b = 5;
+        int expectedResult = 5;
 
         IntegerCalculator calculator = new IntegerCalculator();
 
@@ -55,7 +56,7 @@ public class IntegerCalculatorTest {
         int result = calculator.subtract(a, b);
 
         // then
-
+        assertThat(result).isEqualTo(expectedResult);
     }
 
     /**
