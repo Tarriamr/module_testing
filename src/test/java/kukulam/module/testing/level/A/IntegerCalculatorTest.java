@@ -10,13 +10,22 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 /*
     simple tests, isEqualTo, parametrized test
  */
 public class IntegerCalculatorTest {
+
+    static Stream<Arguments> addTwoIntegersArguments() {
+        return Stream.of(
+                //        a,   b,   expectedResult
+                arguments(10, 5, 15),
+                arguments(1, 2, 3),
+                arguments(3, 6, 9)
+        );
+    }
 
     /**
      * Example test with usage of {@link Assertions#assertThat}.
@@ -71,10 +80,17 @@ public class IntegerCalculatorTest {
     @Test
     void shouldMultiplyTwoIntegersCorrectly() {
         // given
+        int a = 2;
+        int b = 2;
+        int expectedResult = 4;
+
+        IntegerCalculator calculator = new IntegerCalculator();
 
         // when
+        int resoult = calculator.multiply(a, b);
 
         // then
+        assertThat(resoult).isEqualTo(expectedResult);
     }
 
     /**
@@ -86,6 +102,9 @@ public class IntegerCalculatorTest {
     @Test
     void shouldCalculateSquareNumber() {
         // given
+        int a = 2;
+        int b = 2;
+        int expectsResult = 4;
 
         // when
 
@@ -107,15 +126,6 @@ public class IntegerCalculatorTest {
 
         // then
         assertThat(result).isEqualTo(expectedResult);
-    }
-
-    static Stream<Arguments> addTwoIntegersArguments() {
-        return Stream.of(
-                //        a,   b,   expectedResult
-                arguments(10,  5,   15),
-                arguments(1,   2,    3),
-                arguments(3,   6,    9)
-        );
     }
 
     /**
