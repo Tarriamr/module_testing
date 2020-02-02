@@ -99,6 +99,7 @@ class StringHandlerTest {
 
         // then
         assertThat(resoult).isEqualTo(expectedResult);
+        assertThat(resoult).isNotNull();
     }
 
     /**
@@ -130,4 +131,14 @@ class StringHandlerTest {
     /**
      * TODO EXTRA: write all possible tests for {@link StringHandler#convert(String, boolean)}}
      */
+    @Test
+    void testMetodyConvertNaDuzeLubMaleLitery() {
+        // given
+
+
+        // when
+        stringHandler.convert("",true);
+
+        //then
+    }
 }
