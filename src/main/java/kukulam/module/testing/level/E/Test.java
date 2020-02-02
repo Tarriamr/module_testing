@@ -1,19 +1,18 @@
 package kukulam.module.testing.level.E;
 
 public class Test {
-    private static int a;
 
     public static void main(String[] args) {
-        int a = 5;
-        System.out.print(f(a));
-        System.out.print(f(a));
-        System.out.print(a);
-    }
+        int c = -1;
 
-    public static int f(int x) {
-        a++;
-        return a + x;
-
-
+        if (c++ >= 0) {
+            System.out.print("L");
+        } else {
+            System.out.print("K");
+            if (c < 0) {
+                System.out.print(c);
+            }
+        }
+        System.out.println(c);
     }
 }
