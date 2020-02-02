@@ -12,8 +12,8 @@ public class CarAgeAssert extends AbstractAssert<CarAgeAssert, Car[]> {
     }
 
     public void hasAge(int age) {
-        for (int i = 0; i < actual.length; i++){
-            if (actual[i].getAge() != age){
+        for (int i = 0; i < actual.length; i++) {
+            if (actual[i].getAge() != age) {
                 failWithMessage("Błędny wiek");
             }
         }
