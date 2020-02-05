@@ -106,9 +106,13 @@ public class IntegerCalculatorTest {
         int b = 2;
         int expectsResult = 4;
 
+        IntegerCalculator calculator = new IntegerCalculator();
+
         // when
+        int resoult = calculator.multiply(a, b);
 
         // then
+        assertThat(resoult).isEqualTo(expectsResult);
 
     }
 
@@ -141,11 +145,16 @@ public class IntegerCalculatorTest {
     @MethodSource("subtractTwoIntegersArguments")
     void shouldSubtractTwoIntegersCorrectlyParameterizedTest(int a, int b, int expectedResult) {
         // given
+        IntegerCalculator calculator = new IntegerCalculator();
 
         // when
+        int result = calculator.subtract(a,b);
+
 
         // then
+        assertThat(result).isEqualTo(expectedResult);
 
     }
+
 
 }
