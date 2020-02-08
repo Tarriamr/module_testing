@@ -21,9 +21,9 @@ public class IntegerCalculatorTest {
     static Stream<Arguments> addTwoIntegersArguments() {
         return Stream.of(
                 //        a,   b,   expectedResult
-                arguments(10, 5, 15),
-                arguments(1, 2, 3),
-                arguments(3, 6, 9)
+                arguments(10, 5, 5),
+                arguments(2, 1, 1),
+                arguments(3, 6, -3)
         );
     }
 
@@ -119,6 +119,7 @@ public class IntegerCalculatorTest {
     /**
      * Example of parametrized test.
      */
+    @Disabled
     @ParameterizedTest
     @MethodSource("addTwoIntegersArguments")
     void shouldAddTwoIntegersCorrectlyParameterizedTest(int a, int b, int expectedResult) {
@@ -140,7 +141,7 @@ public class IntegerCalculatorTest {
      * but REMEMBER to rename method and change value of arguments.
      * 3. Write test, like in {@link #shouldAddTwoIntegersCorrectlyParameterizedTest}.
      */
-    @Disabled
+
     @ParameterizedTest()
     @MethodSource("subtractTwoIntegersArguments")
     void shouldSubtractTwoIntegersCorrectlyParameterizedTest(int a, int b, int expectedResult) {
